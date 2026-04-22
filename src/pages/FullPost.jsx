@@ -20,7 +20,7 @@ export const FullPost = () => {
         setLoad(false)
     })
       .catch((e)=>{console.log(e)})
-  },[])
+  },[id])
 
   if(load){
     return <Post isLoading={load} isFullPost/>

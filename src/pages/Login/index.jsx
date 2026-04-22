@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Paper from "@mui/material/Paper";
@@ -25,6 +25,7 @@ export const Login = () => {
     const data = await dispatch(fetchAuth(values))
 
     if(!data.payload){
+      setError("Не удалось авторизоваться")
       return alert('Не удалось авторизоваться')
     }
 

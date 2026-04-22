@@ -5,7 +5,7 @@ import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
 import { useForm } from 'react-hook-form';
-import { selectIsAuth,fetchAuthMe,fetchAuth, fetchRegister } from '../../redux/slices/auth';
+import { selectIsAuth, fetchRegister } from '../../redux/slices/auth';
 import { useDispatch,useSelector } from 'react-redux';
 import styles from './Login.module.scss';
 import { Navigate } from 'react-router-dom';
@@ -25,6 +25,7 @@ export const Registration = () => {
       const data = await dispatch(fetchRegister(values))
   
       if(!data.payload){
+        setError("ОШибка")
         return alert('Не удалось зарегистрироваться')
       }
   

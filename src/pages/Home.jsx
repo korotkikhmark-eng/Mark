@@ -20,7 +20,7 @@ export const Home = () => {
     dispatch(fetchPosts())
     dispatch(fetchTags())
     dispatch(fetchComments())
-  },[])
+  },[dispatch])
 
 
 

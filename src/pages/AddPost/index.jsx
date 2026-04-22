@@ -19,7 +19,6 @@ export const AddPost = () => {
   const [text, setText] = React.useState('');
   const [title, setTitle] = React.useState('');
   const [taags, setTags] = React.useState('');
-  const [load, setLoad] = React.useState(false);
   const [imageUrl, setImageUrl] = React.useState('');
   const input = useRef(null)
   const tags = taags.split(",")
@@ -51,7 +50,7 @@ export const AddPost = () => {
         alert("Ошибка")
       })
     }
-  },[])
+  },[id])
 
   const onClickRemoveImage = () => {
     setImageUrl('')
@@ -83,7 +82,6 @@ export const AddPost = () => {
 
   const onSubmit = async () =>{
     try{
-      setLoad(true)
       const fields = {
         title,
         text,

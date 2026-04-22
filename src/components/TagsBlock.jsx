@@ -7,10 +7,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import TagIcon from "@mui/icons-material/Tag";
 import ListItemText from "@mui/material/ListItemText";
 import Skeleton from "@mui/material/Skeleton";
-
 import { SideBlock } from "./SideBlock";
-import { useDispatch } from "react-redux";
-import { fetchPostsByTags } from "../redux/slices/posts";
 
 export const TagsBlock = ({ items, isLoading = true }) => {
 

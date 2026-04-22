@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from 'react';
+import React, { useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Grid from '@mui/material/Grid';
 import { useParams } from 'react-router-dom';
@@ -8,14 +8,12 @@ import { fetchPostsByTags} from '../redux/slices/posts';
 export const PostsByTags = () => {
   const dispatch = useDispatch()
   const {posts} = useSelector(state =>state.posts)
-  const [data,setData] = useState()
   const {id} = useParams()
   console.log(id)
   const userData = useSelector(state =>state.auth.data)
   useEffect(()=>{
-    setData(false)
     dispatch(fetchPostsByTags(id))
-  },[])
+  },[dispatch,id])
   const _isTagsLoading = posts.status === 'loading'
   if(_isTagsLoading){
     return <Post isLoading={_isTagsLoading} isFullPost/>
