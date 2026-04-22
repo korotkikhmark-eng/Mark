@@ -45,7 +45,7 @@ export const Index = () => {
           comments
         }
 
-        const {data} =  await axios.patch(`http://localhost:4444/posts/${id}`, fields)
+        const {data} =  await axios.patch(`${process.env.REACT_APP_API_URL}/posts/${id}`, fields)
         const _id = id
         window.location.reload()
 
