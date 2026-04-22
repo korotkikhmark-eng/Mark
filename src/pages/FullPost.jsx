@@ -14,7 +14,7 @@ export const FullPost = () => {
 
   useEffect(()=>{
     axios
-      .get(`${process.env.REACT_APP_API_URL}/posts/${id}`)
+      .get(`${process.env.REACT_APP_API_URL}posts/${id}`)
       .then((res)=>{
         setData(res.data)
         setLoad(false)
