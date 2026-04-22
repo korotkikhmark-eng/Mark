@@ -89,7 +89,7 @@ export const AddPost = () => {
         tags
       }
 
-      const {data} = isEditing? await axios.patch(`${process.env.REACT_APP_API_URL}/posts/${id}`, fields) : await axios.post(`${process.env.REACT_APP_API_URL}/posts/`, fields);
+      const {data} = isEditing? await axios.patch(`${process.env.REACT_APP_API_URL}posts/${id}`, fields) : await axios.post(`${process.env.REACT_APP_API_URL}posts/`, fields);
       const _id = isEditing ? id : data._id
       
 
