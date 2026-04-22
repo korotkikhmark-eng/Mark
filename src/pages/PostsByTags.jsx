@@ -1,14 +1,9 @@
 import React, { useEffect,useState } from 'react';
-import Tabs from '@mui/material/Tabs';
 import { useDispatch, useSelector } from 'react-redux';
-import Tab from '@mui/material/Tab';
 import Grid from '@mui/material/Grid';
-import axios from '../axios';
 import { useParams } from 'react-router-dom';
 import { Post } from '../components/Post';
-import { TagsBlock } from '../components/TagsBlock';
-import { CommentsBlock } from '../components/CommentsBlock';
-import { fetchPosts, fetchPostsByTags, fetchTags } from '../redux/slices/posts';
+import { fetchPostsByTags} from '../redux/slices/posts';
 
 export const PostsByTags = () => {
   const dispatch = useDispatch()

@@ -1,7 +1,7 @@
 import React,{useEffect} from "react";
 
 import styles from "./AddComment.module.scss";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import TextField from "@mui/material/TextField";
 import Avatar from "@mui/material/Avatar";
@@ -9,7 +9,6 @@ import Button from "@mui/material/Button";
 import axios from "../../axios";
 
 export const Index = () => {
-  const navigate = useNavigate()
   const {id} = useParams()
   const [comments, setComments] = React.useState('');
   const [comment, setComment] = React.useState('');
@@ -17,7 +16,6 @@ export const Index = () => {
   const [title, setTitle] = React.useState('');
   const [taags, setTags] = React.useState('');
   const [imageUrl, setImageUrl] = React.useState('');
-  const [load, setLoad] = React.useState(false);
   useEffect(()=>{
       if(id){
         axios.get(`/posts-comments/${id}`).then(({data})=>{
@@ -31,11 +29,10 @@ export const Index = () => {
           alert("Ошибка")
         })
       }
-    },[])
+    },[id])
     const onSubmit = async () =>{
       try{
         setComments(comments.push(comment))
-        setLoad(true)
         const tags = taags.split(',')
         const fields = {
           title,
@@ -45,8 +42,9 @@ export const Index = () => {
           comments
         }
 
-        const {data} =  await axios.patch(`${process.env.REACT_APP_API_URL}/posts/${id}`, fields)
-        const _id = id
+        const {data} = await axios.patch(`${process.env.REACT_APP_API_URL}/posts/${id}`, fields)
+        const _id = data._id
+        console.log(_id)
         window.location.reload()
 
 
