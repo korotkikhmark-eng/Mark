@@ -19,7 +19,7 @@ export const PostsByTags = () => {
     return <Post isLoading={_isTagsLoading} isFullPost/>
   }
 
-  const width = window.innerWidth * 0.1
+  const width = window.innerWidth * 0.05
 
   return (
     <>
