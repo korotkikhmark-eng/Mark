@@ -43,7 +43,6 @@ export const Home = () => {
               user={obj.user}
               createdAt={obj.createdAt}
               viewsCount={obj.viewsCount}
-              commentsCount={0}
               tags={obj.tags}
               commentsCount={obj.comments.length}
               isEditable={userData?._id === obj.user._id}
