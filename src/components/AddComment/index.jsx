@@ -17,6 +17,7 @@ export const Index = () => {
   const [title, setTitle] = React.useState('');
   const [taags, setTags] = React.useState('');
   const [imageUrl, setImageUrl] = React.useState('');
+  const [viewsCount,setViewsCount] = React.useState('')
   useEffect(()=>{
       if(id){
         axios.get(`/posts-comments/${id}`).then(({data})=>{
@@ -25,6 +26,7 @@ export const Index = () => {
           setImageUrl(data.imageUrl)
           setTags(data.tags.join(','))
           setComments(data.comments)
+          setViewsCount(data.viewsCount)
         }).catch((e)=>{
           console.warn(e)
           alert("Ошибка")
@@ -33,6 +35,7 @@ export const Index = () => {
     },[id])
     const onSubmit = async () =>{
       try{
+        setViewsCount(viewsCount-1)
         setComments(comments.push(comment))
         const tags = taags.split(',')
         const fields = {
@@ -40,7 +43,8 @@ export const Index = () => {
           text,
           imageUrl,
           tags,
-          comments
+          comments,
+          viewsCount
         }
 
         const {data} = await axios.patch(`${process.env.REACT_APP_API_URL}posts/${id}`, fields)
