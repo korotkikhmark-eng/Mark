@@ -28,7 +28,7 @@ export const FullPost = () => {
   
 
   return (
-    <div style={{marginTop:100,width:1000,position:'relative',display:'grid',justifyContent:'center', marginLeft:'auto',marginRight:'auto'}}>
+    <div style={{marginTop:100,width:window.innerWidth / 1.9,position:'relative',display:'grid',justifyContent:'center', marginLeft:'auto',marginRight:'auto'}}>
       <Post
         _id={data._id}
         title={data.title}

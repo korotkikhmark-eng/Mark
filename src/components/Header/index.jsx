@@ -22,7 +22,7 @@ export const Header = () => {
     <div style={{position:'fixed',top:'0',right:'0',left:'0',zIndex:10}} className={styles.root}>
       <Container maxWidth="lg">
         <div className={styles.inner}>
-          <Link style={{transform:'translateX(-250px)'}} className={styles.logo} to='/'>
+          <Link  className={styles.logo} to='/'>
             <div >incognito</div>
           </Link>
           <div className={styles.buttons}>
@@ -30,9 +30,9 @@ export const Header = () => {
               <>
               
                 <Link  to="/add-post">
-                  <Button style={{transform:'translateX(300px)'}} variant="contained">Написать статью</Button>
+                  <Button  variant="contained">Написать статью</Button>
                 </Link>
-                <Button style={{transform:'translateX(300px)'}} onClick={onClickLogout} variant="contained" color="error">
+                <Button  onClick={onClickLogout} variant="contained" color="error">
                   Выйти
                 </Button>
               </>

@@ -13,7 +13,7 @@ export const TagsBlock = ({ items, isLoading = true }) => {
 
   
   return (
-    <SideBlock  title="Тэги">
+    <SideBlock style={{width:window.innerWidth/1.9}} title="Тэги">
       <List>
         {(isLoading ? [...Array(5)] : items).map((name, i) => (
           <a
