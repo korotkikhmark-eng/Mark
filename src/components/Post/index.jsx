@@ -40,7 +40,7 @@ export const Post = ({
   };
 
   return (
-    <div style={{width:window.innerWidth / 1.9,position:'relative',display:'grid'}} className={clsx(styles.root, { [styles.rootFull]: isFullPost })}>
+    <div style={{width:window.innerWidth / 1.7,position:'relative',display:'grid'}} className={clsx(styles.root, { [styles.rootFull]: isFullPost })}>
       {isEditable && (
         <div className={styles.editButtons}>
           <Link to={`/posts/${_id}/edit`}>
