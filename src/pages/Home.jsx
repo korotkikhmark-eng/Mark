@@ -23,7 +23,7 @@ export const Home = () => {
   },[dispatch])
 
 
-  const width = window.innerWidth * 0.2
+  const width = window.innerWidth * 0.1
 
 
   return (
