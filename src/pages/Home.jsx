@@ -23,7 +23,8 @@ export const Home = () => {
   },[dispatch])
 
 
-  const width = window.innerWidth * 0.1
+  const width = window.innerWidth * 0.05
+
 
   return (
     <>
@@ -35,7 +36,7 @@ export const Home = () => {
       <Grid style={{ marginTop:70,}} container spacing={4}>
         <Grid xs={8}  item>
           {(_isPostsLoading ? [...Array(5)] : posts.items).map((obj,index) => (
-            _isPostsLoading ? <div  ><Post key={index} isLoading={true} /></div> : <div ><Post
+            _isPostsLoading ? <div style={{transform:`translateX(-${width}px)`}} ><Post key={index} isLoading={true} /></div> : <div style={{transform:`translateX(-${width}px)`}}><Post
               _id={obj._id}
               title={obj.title}
               imageUrl={obj.imageUrl ? `${process.env.REACT_APP_API_URL}${obj.imageUrl}`:''}
