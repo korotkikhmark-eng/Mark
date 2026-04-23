@@ -23,11 +23,11 @@ export const PostsByTags = () => {
 
   return (
     <>
-      <h1 style={{ marginTop:70,marginLeft:0,transform:`translateX(-${width}px)`}}>#{id}</h1>
+      <h1 style={{ marginTop:70,marginLeft:0}}>#{id}</h1>
       <Grid  container spacing={4}>
         <Grid xs={8}  item>
           {(_isTagsLoading ? [...Array(5)] : posts.items).map((obj,index) => (
-            _isTagsLoading ? <div style={{transform:`translateX(-${width}px)`}} ><Post key={index} isLoading={true} /></div> : <div style={{transform:'translateX(-250px)'}}><Post
+            _isTagsLoading ? <div style={{transform:`translateX(-${width}px)`}} ><Post key={index} isLoading={true} /></div> : <div ><Post
               _id={obj._id}
               title={obj.title}
               imageUrl={obj.imageUrl ? `${process.env.REACT_APP_API_URL}${obj.imageUrl}`:''}
