@@ -45,7 +45,7 @@ export const Index = () => {
         const {data} = await axios.patch(`${process.env.REACT_APP_API_URL}posts/${id}`, fields)
         const _id = data._id
         console.log(Boolean(_id))
-
+        window.location.reload()
       }catch(e){
         console.warn(e)
         alert("Ошибка при создании статьи")
