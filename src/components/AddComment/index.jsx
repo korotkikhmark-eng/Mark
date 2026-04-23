@@ -1,7 +1,7 @@
 import React,{useEffect} from "react";
 
 import styles from "./AddComment.module.scss";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import TextField from "@mui/material/TextField";
 import Avatar from "@mui/material/Avatar";
@@ -9,6 +9,7 @@ import Button from "@mui/material/Button";
 import axios from "../../axios";
 
 export const Index = () => {
+  const navigate = useNavigate()
   const {id} = useParams()
   const [comments, setComments] = React.useState('');
   const [comment, setComment] = React.useState('');
@@ -44,9 +45,7 @@ export const Index = () => {
 
         const {data} = await axios.patch(`${process.env.REACT_APP_API_URL}posts/${id}`, fields)
         const _id = data._id
-        console.log(_id)
-        window.location.reload()
-
+        console.log(Boolean(_id))
 
       }catch(e){
         console.warn(e)
