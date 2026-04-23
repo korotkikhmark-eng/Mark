@@ -25,10 +25,9 @@ export const FullPost = () => {
   if(load){
     return <Post isLoading={load} isFullPost/>
   }
-  
 
   return (
-    <div style={{marginTop:100,width:window.innerWidth / 1.2,position:'relative',display:'grid',justifyContent:'center', marginLeft:'auto',marginRight:'auto'}}>
+    <div style={{marginTop:100,width:window.innerWidth / 1.7,position:'relative',display:'grid',justifyContent:'center', marginLeft:'auto',marginRight:'auto'}}>
       <Post
         _id={data._id}
         title={data.title}
