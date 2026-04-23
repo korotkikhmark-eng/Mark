@@ -49,7 +49,7 @@ export const Home = () => {
             /></div>
           ))}
         </Grid>
-        <Grid style={{position:'fixed', right:120, width:600}} xs={4} item>
+        <Grid style={{position:'fixed', right:`${width}px`}} xs={4} item>
           <TagsBlock  items={tags.items} isLoading={_isTagsLoading} >
           </TagsBlock>
           <CommentsBlock
