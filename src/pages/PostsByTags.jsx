@@ -19,6 +19,7 @@ export const PostsByTags = () => {
     return <Post isLoading={_isTagsLoading} isFullPost/>
   }
 
+  const width = window.innerWidth * 0.1
 
   return (
     <>
@@ -26,7 +27,7 @@ export const PostsByTags = () => {
       <Grid  container spacing={4}>
         <Grid xs={8}  item>
           {(_isTagsLoading ? [...Array(5)] : posts.items).map((obj,index) => (
-            _isTagsLoading ? <div style={{transform:'translateX(-250px)'}} ><Post key={index} isLoading={true} /></div> : <div style={{transform:'translateX(-250px)'}}><Post
+            _isTagsLoading ? <div style={{transform:`translateX(-${width}px)`}} ><Post key={index} isLoading={true} /></div> : <div style={{transform:'translateX(-250px)'}}><Post
               _id={obj._id}
               title={obj.title}
               imageUrl={obj.imageUrl ? `${process.env.REACT_APP_API_URL}${obj.imageUrl}`:''}
