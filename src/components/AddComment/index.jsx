@@ -1,7 +1,7 @@
 import React,{useEffect} from "react";
 
 import styles from "./AddComment.module.scss";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import TextField from "@mui/material/TextField";
 import Avatar from "@mui/material/Avatar";
@@ -9,7 +9,6 @@ import Button from "@mui/material/Button";
 import axios from "../../axios";
 
 export const Index = () => {
-  const navigate = useNavigate()
   const {id} = useParams()
   const [comments, setComments] = React.useState('');
   const [comment, setComment] = React.useState('');
