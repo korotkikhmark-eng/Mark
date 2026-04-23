@@ -22,7 +22,7 @@ export const PostsByTags = () => {
 
   return (
     <>
-      <h1 style={{ marginTop:70,marginLeft:0,transform: 'translateX(-240px)', fontSize:40}}>#{id}</h1>
+      <h1 style={{ marginTop:70,marginLeft:0}}>#{id}</h1>
       <Grid  container spacing={4}>
         <Grid xs={8}  item>
           {(_isTagsLoading ? [...Array(5)] : posts.items).map((obj,index) => (
